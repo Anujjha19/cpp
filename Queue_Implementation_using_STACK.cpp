@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+/* #include <bits/stdc++.h>
 
 using namespace std;
 
@@ -63,4 +63,76 @@ int main()
     q.Push(5);
     cout << "The top of the queue is " << q.Top() << endl;
     cout << "The size of the queue is " << q.size() << endl;
+
+//Time Complexity: O(N )
+
+//Space Complexity: O(2N)
+}
+
+ */
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+struct Queue
+{
+    stack<int> s1, s2;
+
+    void Push(int data)
+    {
+        s1.push(data);
+    }
+    int Pop()
+    {
+        if (!s2.empty())
+        {
+            int val= s2.top();
+            s2.pop();
+            return val;
+        }
+        else{
+            while (!s1.empty())
+            {
+                s2.push(s1.top());
+                s1.pop();
+            }
+            int x= s2.top();
+            s2.pop();
+            return x;
+        }
+    }
+    int Top()
+    {
+        if (!s2.empty())
+        {
+            return s2.top();
+        }
+        else
+        {
+            while (!s1.empty())
+            {
+                s2.push(s1.top());
+                s1.pop();
+            }
+        }
+    }
+    int size()
+    {
+        return s2.size() + s1.size();
+    }
+};
+int main()
+{
+    Queue q;
+    q.Push(3);
+  q.Push(4);
+  cout << "The element poped is " << q.Pop() << endl;
+  q.Push(5);
+  cout << "The top of the queue is " << q.Top() << endl;
+  cout << "The size of the queue is " << q.size() << endl;
+
+    // Time Complexity: O(1 )
+
+    // Space Complexity: O(2N)
 }
