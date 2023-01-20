@@ -63,7 +63,6 @@ void levelOrderTraversal(node *root)
             {
                 q.push(temp->left);
             }
-
             if (temp->right)
             {
                 q.push(temp->right);
@@ -97,24 +96,6 @@ void preOrder(node *root)
     preOrder(root->right);
 }
 
-/* Iterative
-vector <int>  preOrder(node *root){
-    vectr<int> ans;
-    stack<node*> s;
-    s.push(root);
-    while(!s.empty()){
-        node* temp = s.top();
-        s.pop();
-        ans.push_back(temp -> data );
-        if( temp -> right) {s.push(temp -> right)};
-        if( temp -> left) {s.push(temp -> left)};
-    }
-    return ans;
-}
-
- */
-
-
 void postOrder(node *root)
 {
 
@@ -123,7 +104,7 @@ void postOrder(node *root)
     {
         return;
     }
-    
+
     postOrder(root->left);
     postOrder(root->right);
     cout << root->data << " ";
@@ -155,3 +136,83 @@ int main()
     return 0;
 }
 
+/* Iterative Pre-Order
+vector<int> preorderTraversal(TreeNode* root) {
+        vector<int> ans;
+        if(root ==NULL ) return ans;
+
+        stack<TreeNode*>s;
+        s.push(root);
+        while( !s.empty()){
+            root = s.top();
+            s.pop();
+            ans.push_back( root -> val);
+            if( root -> right != NULL){
+                s.push(root->right);
+            }
+            if( root -> left != NULL){
+                s.push(root->left);
+            }
+        }
+        return ans;
+
+    }
+ */
+
+/* Iterative In-Order
+
+vector<int> inorderTraversal(TreeNode* root) {
+        vector<int> ans;
+        TreeNode* node =root;
+        if(root == NULL) return ans;
+
+        stack<TreeNode*> s;
+        while(true){
+
+        if( node != NULL){
+            s.push(node);
+            node = node -> left;
+        }else{
+            if(s.empty()  == true ) break;
+            node = s.top();
+            s.pop();
+            ans.push_back(node->val);
+            node =node ->right;
+        }
+
+        }
+        return ans;
+    }
+
+*/
+/* Iterative Post-Order
+
+vector<int> postorderTraversal(TreeNode* root) {
+        vector <int> ans;
+        if(root ==NULL) return ans;
+        stack<TreeNode* > s;
+        while( root !=NULL ||  !s.empty()){
+            if( root !=NULL){
+                s.push(root);
+                root = root -> left;
+            }
+            else{
+                TreeNode* temp= s.top() -> right;
+                if(temp==NULL){
+                    temp=s.top();
+                    s.pop();
+                    ans.push_back(temp -> val);
+
+                    while(!s.empty() && temp == s.top() -> right ){
+                                temp = s.top();
+                    s.pop();
+                    ans.push_back(temp -> val);
+                    }
+                }
+                else root = temp;
+            }
+        }
+        return ans;
+    }
+
+*/
