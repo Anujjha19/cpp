@@ -95,7 +95,9 @@ void preOrder(node *root)
     cout << root->data << " ";
     preOrder(root->left);
     preOrder(root->right);
-}/* Iterative
+}
+
+/* Iterative
 vector <int>  preOrder(node *root){
     vectr<int> ans;
     stack<node*> s;
