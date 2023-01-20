@@ -20,7 +20,7 @@ int maxDepth(TreeNode *root)
 } */
 
 //Depth First Search
-
+/* 
 int maxDepth(TreeNode *root)
 {
     if (root == NULL)
@@ -45,4 +45,5 @@ int maxDepth(TreeNode *root)
     }
 
     return count;
-}
+} */
+
