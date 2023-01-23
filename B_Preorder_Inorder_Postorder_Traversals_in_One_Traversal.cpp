@@ -13,7 +13,7 @@ vector<int>  allTraversal(node *root, vector<int> &pre, vector<int> &in, vector<
     stack<pair <node* , int >> s;
     s.push({root , 1});
     vector<int>pre, in, post;
-    if(root==NULL) return oot ;
+    if(root==NULL) return  ;
 
     while(!s.empty()){
         auto it = s.top();
