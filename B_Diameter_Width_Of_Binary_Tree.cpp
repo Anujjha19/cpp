@@ -140,3 +140,21 @@ public:
         return diameterFast(root).first;
     }
 }; 
+
+class Solution {
+public:
+int height(TreeNode*root){
+    if(!root)return 0;
+    int l=height(root->left);
+    int r=height(root->right);
+    return max(l,r)+1;
+}
+    int diameterOfBinaryTree(TreeNode* root) {
+        if(!root)return 0;
+        int l=height(root->left);
+        int r=height(root->right);
+        int ld=diameterOfBinaryTree(root->left);
+        int rd=diameterOfBinaryTree(root->right);
+        return max({l+r,ld,rd});
+    }
+};
