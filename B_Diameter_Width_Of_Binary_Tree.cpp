@@ -139,3 +139,4 @@ public:
     {
         return diameterFast(root).first;
     }
+}; 
