@@ -26,3 +26,20 @@ vector<int> leftView(Node *root)
 
     return ans;
 }
+/* void solve(Node *root, vector<int> &ans, int level)
+{
+    // BaseCase
+    if (root == NULL) { return; }
+    if( maxLevel < level ){
+        cout<< (root -> data ) << endl;
+        maxLevel = level;
+    }
+    solve(root->left,  level + 1);
+    solve(root->right,  level + 1);
+}
+int maxLevel=0;
+vector<int> leftView(Node *root)
+{
+    solve(root, 1);
+}
+*/
