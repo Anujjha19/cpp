@@ -33,7 +33,9 @@ void solveSumK( Node* root , int &count,int k , vector<int> path ){
                 count++;
             }
         } 
-        path.pop_back();
+        
+        // path.pop_back();
+        // We should not do it as we are not passing it by refernce
         
      
     }
