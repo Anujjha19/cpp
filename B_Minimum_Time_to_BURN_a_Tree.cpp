@@ -130,6 +130,7 @@ int minTime(Node *root, int target)
     return ans;
 }
 
+// 1 2 3 4 5 -1 6 -1 -1 7 8 -1 9 10 11 -1 -1 -1 12 -1 -1 -1 13
 
 
 int main()
@@ -138,11 +139,10 @@ int main()
     Node *root = NULL;
     root = buildTree(root);
 
-    int target;
+int target;
+
+cout << "Target Node " << target << endl;
     cin >> target;
-
-    cout << "Target Node " << target << endl;
-
     int ans = minTime(root, target);
 
     cout << "Min Time TO Burn :  " << ans;
