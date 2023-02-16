@@ -16,7 +16,6 @@ int move0(int arr[], int brr[], int m, int n){
 }
 
 void printArray(int arr[] , int m){
-
     for(int i=0; i< m; i++){
         cout<<arr[i] << " ";
     }      
@@ -32,7 +31,7 @@ int main(){
   
 
 
-       move0(arr,6);
+       move0(arr,brr , 3 , 3);
 
     printArray( arr,6);
    
