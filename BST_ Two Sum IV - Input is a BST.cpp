@@ -78,7 +78,7 @@ public:
 bool findTarget(TreeNode* root, int k) {
 
     if( root ==NULL) return false;
-    BSTIterator l( root , false); //next
+    BSTIterator l( pvroot , false); //next
     BSTIterator r( root , true); //before
 
     int  i = l.next();
