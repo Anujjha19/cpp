@@ -17,14 +17,7 @@ public:
     }
 };
 
-class compare
-{
-public:
-    bool operator()(node *a, node *b)
-    {
-        return a->data > b->data;
-    }
-};
+
 
 vector<int> mergeKSortedArrays(vector<vector<int>> &kArrays, int k, vector<int> &ans)
 {
